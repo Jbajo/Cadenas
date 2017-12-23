@@ -112,16 +112,17 @@ public class Cadenas {
 
 		for (int i = 0; i<cadena.length(); i++) {			
 			
-			//comienza secuencia
+			//comienza secuencia con signo
 			if(cadena.charAt(i)== '-'||cadena.charAt(i)== '+'){
 				if(i<cadena.length()-1)
 					if(cadena.charAt(i+1)== '1'||cadena.charAt(i+1)== '2'||cadena.charAt(i+1)== '3'||cadena.charAt(i+1)== '4'||cadena.charAt(i+1)== '5'||cadena.charAt(i+1)=='6'||cadena.charAt(i+1)== '7'||cadena.charAt(i+1)== '8'||cadena.charAt(i+1)== '9'||cadena.charAt(i+1)== '0') {
 						enteroEncontrado = true;
 						aux+=String.valueOf(cadena.charAt(i));		
-						aux+=String.valueOf(cadena.charAt(i+1));
+						
 						
 					}
 					else {
+						
 						enteroEncontrado=false;
 						aux= "";
 					}
@@ -129,32 +130,31 @@ public class Cadenas {
 					
 				
 			}
-			else if (enteroEncontrado) {
+			//comienza secuencia sin signo
+			else if (cadena.charAt(i)== '1'||cadena.charAt(i)== '2'||cadena.charAt(i)== '3'||cadena.charAt(i)== '4'||cadena.charAt(i)== '5'||cadena.charAt(i)=='6'||cadena.charAt(i)== '7'||cadena.charAt(i)== '8'||cadena.charAt(i)== '9'||cadena.charAt(i)== '0') { 
 					
 					aux+=String.valueOf(cadena.charAt(i));	
-					
-			
-					
-									
-			//secuencia al final de la cadena
-			
-		}
-			else {
-				aux ="";
+					enteroEncontrado=true;
 			}
-				
-		}
-		
-		if (enteroEncontrado) {		
-			System.out.println("fin de cadena" + aux);
-			//enteroEncontrado=false;
-			//listaNumeros.add(aux);
-			//aux= "";
-		}
+			//finaliza secuencia
+			else if (enteroEncontrado) {
+				listaNumeros.add(aux);
+				aux="";
+				enteroEncontrado = false;
+			}
 			
+			//caso numero al final de una cadena
+			if (enteroEncontrado && i == cadena.length()-1) {
+				enteroEncontrado=false;
+				listaNumeros.add(aux);
+				aux= "";
 				
+			}	
+					
+		}
 		
-	return listaNumeros;
+		return listaNumeros;
+	
 	
 	}
 }
