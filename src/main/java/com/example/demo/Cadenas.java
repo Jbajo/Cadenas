@@ -67,12 +67,23 @@ public class Cadenas {
 			boolean enteroEncontrado = false;
 			String aux = new String();
 			ArrayList <String> listaNumeros = new ArrayList<>();
+			ArrayList <Character> listaCompara = new ArrayList<> ();
 			
+			listaCompara.add('0');
+			listaCompara.add('1');
+			listaCompara.add('2');
+			listaCompara.add('3');
+			listaCompara.add('4');
+			listaCompara.add('5');
+			listaCompara.add('6');
+			listaCompara.add('7');
+			listaCompara.add('8');
+			listaCompara.add('9');
 	
 			for (int i = 0; i<cadena.length(); i++) {			
 				
 				//comienza secuencia
-				if(cadena.charAt(i)== '1'||cadena.charAt(i)== '2'||cadena.charAt(i)== '3'||cadena.charAt(i)== '4'||cadena.charAt(i)== '5'||cadena.charAt(i)=='6'||cadena.charAt(i)== '7'||cadena.charAt(i)== '8'||cadena.charAt(i)== '9'||cadena.charAt(i)== '0') {
+				if(listaCompara.contains(cadena.charAt(i))) {
 					enteroEncontrado = true;
 					aux += String.valueOf(cadena.charAt(i));					
 					
@@ -108,14 +119,26 @@ public class Cadenas {
 		boolean enteroEncontrado = false;
 		String aux = new String();
 		ArrayList <String> listaNumeros = new ArrayList<>();
+		ArrayList <Character> listaCompara = new ArrayList<> ();
 		
-
+		listaCompara.add('0');
+		listaCompara.add('1');
+		listaCompara.add('2');
+		listaCompara.add('3');
+		listaCompara.add('4');
+		listaCompara.add('5');
+		listaCompara.add('6');
+		listaCompara.add('7');
+		listaCompara.add('8');
+		listaCompara.add('9');
+		
+		
 		for (int i = 0; i<cadena.length(); i++) {			
 			
 			//comienza secuencia con signo
 			if(cadena.charAt(i)== '-'||cadena.charAt(i)== '+'){
 				if(i<cadena.length()-1)
-					if(cadena.charAt(i+1)== '1'||cadena.charAt(i+1)== '2'||cadena.charAt(i+1)== '3'||cadena.charAt(i+1)== '4'||cadena.charAt(i+1)== '5'||cadena.charAt(i+1)=='6'||cadena.charAt(i+1)== '7'||cadena.charAt(i+1)== '8'||cadena.charAt(i+1)== '9'||cadena.charAt(i+1)== '0') {
+					if(listaCompara.contains(cadena.charAt(i+1))) {
 						enteroEncontrado = true;
 						aux+=String.valueOf(cadena.charAt(i));		
 						
@@ -131,7 +154,7 @@ public class Cadenas {
 				
 			}
 			//comienza secuencia sin signo
-			else if (cadena.charAt(i)== '1'||cadena.charAt(i)== '2'||cadena.charAt(i)== '3'||cadena.charAt(i)== '4'||cadena.charAt(i)== '5'||cadena.charAt(i)=='6'||cadena.charAt(i)== '7'||cadena.charAt(i)== '8'||cadena.charAt(i)== '9'||cadena.charAt(i)== '0') { 
+			else if (listaCompara.contains(cadena.charAt(i))) { 
 					
 					aux+=String.valueOf(cadena.charAt(i));	
 					enteroEncontrado=true;
