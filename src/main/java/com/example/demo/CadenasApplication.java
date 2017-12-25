@@ -12,7 +12,7 @@ public class CadenasApplication {
 		String a2 = "cadena algo más larga";
 		String a3 = "cadena mucho pero que mucho más larga";
 		String a4 = "pepe juan manolo ricardo";
-		String a5 = "-120 Pepe -156 +124 pe-1";
+		String a5 = "-120 Pepe -156 -++124 pe-1";
 		
 		System.out.println(Cadenas.cambiaEspacios(a4));		
 		

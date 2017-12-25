@@ -5,9 +5,6 @@ import java.util.ArrayList;
 
 public class Cadenas {
 
-	
-	/*sumar numeros de una cadena de texto*/
-	
 		
 	public static int [] sumaaVocales (String cadena){
 		
@@ -144,40 +141,34 @@ public class Cadenas {
 						
 						
 					}
-					else {
-						
+					else {						
 						enteroEncontrado=false;
 						aux= "";
-					}
-					
-					
-				
+					}				
 			}
 			//comienza secuencia sin signo
-			else if (listaCompara.contains(cadena.charAt(i))) { 
-					
+			else if (listaCompara.contains(cadena.charAt(i))) { 					
 					aux+=String.valueOf(cadena.charAt(i));	
 					enteroEncontrado=true;
 			}
+			
 			//finaliza secuencia
 			else if (enteroEncontrado) {
 				listaNumeros.add(aux);
 				aux="";
 				enteroEncontrado = false;
-			}
+			}			
 			
 			//caso numero al final de una cadena
 			if (enteroEncontrado && i == cadena.length()-1) {
 				enteroEncontrado=false;
 				listaNumeros.add(aux);
 				aux= "";
-				
 			}	
 					
 		}
 		
-		return listaNumeros;
-	
+		return listaNumeros;	
 	
 	}
 }
