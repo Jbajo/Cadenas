@@ -4,6 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+/**
+ * 
+ * @author Javier Bajo Chacon  javier.bajochacon@gmail.com
+ *
+ */
 public class CadenasApplication {
 
 	public static void main(String[] args) {
@@ -16,16 +21,7 @@ public class CadenasApplication {
 		
 		System.out.println(Cadenas.cambiaEspacios(a4));		
 		
-		//int vocales [] = Cadenas.cuentaVocales(a4);
 		
-		/*for (int i : vocales) {
-			System.out.println(i);
-		}*/
-		
-		/*for (String aux : Cadenas.buscarSecuencias(a5)) {
-			System.out.println(aux);
-			
-		}*/
 		int suma = 0;
 		for (String aux : Cadenas.buscarSecuenciasConSigno(a5)) {
 			System.out.println(aux);
